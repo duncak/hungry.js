@@ -1,7 +1,7 @@
-Crafty.c('Player', {
+Crafty.c('Princess', {
 
   init: function() {
-    this.requires('2D, Canvas, Color, Twoway, Gravity, Collision, Hurtable, Inventory, Picker, Floored')
+    this.requires('2D, Canvas, Color, Gravity, Collision, Hurtable, Floored')
     .onHit('Enemy', function(entities) {
   		if (this.hurted) {
   			return;
@@ -14,16 +14,15 @@ Crafty.c('Player', {
   				this.hurt(fromDirection);
   			}
   		}
-  	})
-    .twoway(150, 270);
+  	});
   },
 
-  player: function(x, y) {
+  princess: function(x, y) {
     this.x = x;
     this.y = y;
     this.w = 24;
     this.h = 24;
-    this.color('#000');
+    this.color('#F5F071');
     this.gravity('Platform');
   }
 });

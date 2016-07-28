@@ -33,5 +33,8 @@ Crafty.e('Bird').enemy(stageWidth/2-6, 48);
 
 Crafty.e('Bear').enemy(stageWidth-50, stageHeight-24);
 
+Crafty.e('Princess')
+	.princess(24, stageHeight-24);
+
 Crafty.e('Player')
-	.player(250, stageHeight-24, 24, 24, '#000');
+	.player(60, stageHeight-24);
