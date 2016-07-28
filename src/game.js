@@ -25,13 +25,13 @@ Crafty.e('Platforms')
 	.platforms(0,0,4,0,0,0,0,0,0,0,0,4)
 
 	.platforms()
-	.platforms(0,0,0,0,4,0,0,0,0,4)
-	.platforms()
+	.platforms(0,0,0,0,4)
+	.platforms(0,0,0,0,0,0,0,0,0,0,10)
 	.platforms();
 
 Crafty.e('Bird').enemy(stageWidth/2-6, 48);
 
-Crafty.e('Bear').enemy(stageWidth-50, stageHeight-24);
+Crafty.e('Bear').enemy(stageWidth-50, stageHeight-24-48);
 
 Crafty.e('Princess')
 	.princess(24, stageHeight-24);
