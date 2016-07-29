@@ -16,5 +16,19 @@ Crafty.c('Stored', {
       }
     });
     this.storedStackValue = 1;
+  },
+
+  store: function() {
+    this.vx = 0;
+    this.vy = 0;
+    this.dX = 0;
+    this.dY = 0;
+
+    if (this.has('Collision')) {
+      this.removeComponent('Collision');
+    }
+    if (this.has('Gravity')) {
+      this.removeComponent('Gravity');
+    }
   }
 });

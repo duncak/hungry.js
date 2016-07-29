@@ -14,16 +14,7 @@ Crafty.c('Inventory', {
     if (isStoredAlready) {
       item.destroy();
     } else {
-      if (item.has('Collision')) {
-        item.removeComponent('Collision');
-      }
-      if (item.has('Gravity')) {
-        item.removeComponent('Gravity');
-      }
-      if (!item.has('Stored')) {
-        item.addComponent('Stored');
-      }
-
+      item.addComponent('Stored').store();
       this._redrawItems();
     }
   },
