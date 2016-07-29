@@ -19,11 +19,8 @@ Crafty.c('Stored', {
   },
 
   store: function() {
-    this.vx = 0;
-    this.vy = 0;
-    this.dX = 0;
-    this.dY = 0;
-
+    this.resetMotion();
+    
     if (this.has('Collision')) {
       this.removeComponent('Collision');
     }
