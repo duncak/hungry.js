@@ -8,7 +8,7 @@ Crafty.c('Bird', {
       if (!this.stunned) {
         this.x += this.dX;
       } else {
-        this.drop('Egg', '#C1E4E8', 6000);
+        this.drop('Egg', 6000);
       }
     })
     .onHit('Player', function(players) {

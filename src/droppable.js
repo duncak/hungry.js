@@ -1,4 +1,4 @@
-Crafty.c('Dropable', {
+Crafty.c('Droppable', {
   init: function() {
     this.dropType = '';
   }
