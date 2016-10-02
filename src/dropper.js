@@ -17,13 +17,13 @@ Crafty.c('Dropper', {
       var dY = this.motionDelta().y * 2;
       if (platform) {
         if (dY > 1) {
-          this.velocity().x = 0;
+          this.vx = 0;
           this.y -= dY;
         }
       }
     });
 
-    item.velocity().x = 120;
+    item.vx = 120;
 
     this.timeout(function () {
       this._hasJustDropped = false;

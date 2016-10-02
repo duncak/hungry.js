@@ -1,7 +1,7 @@
 Crafty.c('Player', {
 
   init: function() {
-    this.requires('2D, Canvas, Color, Twoway, Gravity, Collision, Hurtable, Inventory, Picker, Floored')
+    this.requires('2D, Canvas, Color, Gravity, Collision, Jumper, Hurtable, Inventory, Picker, Floored')
     .onHit('Enemy', function(entities) {
   		if (this.hurted) {
   			return;
@@ -15,7 +15,31 @@ Crafty.c('Player', {
   			}
   		}
   	})
-    .twoway(150, 270);
+    .jumper(270, [Crafty.keys.UP_ARROW, Crafty.keys.W, Crafty.keys.Z])
+    .bind('KeyDown', function(e) {
+      if(e.key == Crafty.keys.LEFT_ARROW) {
+        this.vx -= 150;
+      } else if (e.key == Crafty.keys.RIGHT_ARROW) {
+        this.vx += 150;
+      }
+    })
+    .bind('KeyUp', function(e) {
+      if(e.key == Crafty.keys.LEFT_ARROW) {
+        this.vx += 150;
+      } else if (e.key == Crafty.keys.RIGHT_ARROW) {
+        this.vx -= 150;
+      }
+    })
+    .bind('EnterFrame', function(eventData) {
+      if (this.vx > 150) {
+        this.vx = 150;
+      }
+      if (this.vx < -150) {
+        this.vx = -150;
+      }
+
+
+    });
   },
 
   player: function(x, y) {
