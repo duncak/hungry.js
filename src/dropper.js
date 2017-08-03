@@ -9,16 +9,17 @@ Crafty.c('Dropper', {
     }
     this._hasJustDropped = true;
 
+    var self = this;
     var item = Crafty.e(dropType);
     item.x = this.x;
     item.y = this.y-item.h;
     item.bind('EnterFrame', function () {
-      var platform = this.ground;
-      var dY = this.motionDelta().y * 2;
+      var platform = self.ground;
+      var dY = self.motionDelta().y * 2;
       if (platform) {
         if (dY > 1) {
-          this.vx = 0;
-          this.y -= dY;
+          self.vx = 0;
+          self.y -= dY;
         }
       }
     });

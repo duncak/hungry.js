@@ -1,7 +1,7 @@
 Crafty.c('Player', {
 
   init: function() {
-    this.requires('2D, Canvas, Color, Gravity, Collision, Jumper, Hurtable, Inventory, Picker, Floored')
+    this.requires('2D, Canvas, Color, Gravity, Collision, Motion, Jumper, Hurtable, Inventory, Picker, Floored')
     .onHit('Enemy', function(entities) {
   		if (this.hurted) {
   			return;
